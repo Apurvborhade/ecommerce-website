@@ -1,0 +1,12 @@
+.sidebar {
+    height: 100vh;
+    min-width: 100vw;
+    color: #000; 
+    justify-content: space-between;
+    align-items: center;
+    transition: all .5s ease-in-out;
+}
+
+.sidebar_close {
+    right: -100vw;
+}
