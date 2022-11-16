@@ -7,3 +7,18 @@ export const Menu = [
     "Sale",
     "About Us",
 ]
+
+export const filters = [
+    {
+        title:"Categories"
+    },
+    {
+        title:"Colour"
+    },
+    {
+        title:"Size"
+    },
+    {
+        title:"Sale"
+    },
+]

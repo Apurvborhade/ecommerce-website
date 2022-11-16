@@ -10,3 +10,42 @@
 .sidebar_close {
     right: -100vw;
 }
+
+/* Landing */
+
+    /* banner */
+    .banner_img {
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+    }
+
+    .overlay {
+        position: absolute;
+        width: 100vw;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.484);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgb(255, 255, 255);
+    }
+    /* banner */
+
+    /* Featured */
+    .featured_overlay {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        background: rgba(0, 0, 0, 0.505);
+        position: absolute;
+        color: #fff;
+    }
+    /* Featured */
+
+/* Landing */
+
+    
