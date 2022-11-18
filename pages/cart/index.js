@@ -9,10 +9,9 @@ const index = () => {
         <Header isShopPage={true}/>
         <div className='mt-24 grid grid-cols-1 lg:grid-cols-3 lg:gap-20'>
             <div className='grid grid-cols-1 lg:grid-cols-3 col-span-2'>
-                <ProductCard isShopPage={false}/>
-                <ProductCard isShopPage={false}/>
-                <ProductCard isShopPage={false}/>
-                <ProductCard isShopPage={false}/>
+                <ProductCard isShopPage={false} isCartPage={true}/> 
+                <ProductCard isShopPage={false} isCartPage={true}/> 
+                <ProductCard isShopPage={false} isCartPage={true}/> 
             </div>
 
             <div className='billing-sections bg-btn lg:mr-10 mt-6 pt-10'>

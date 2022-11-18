@@ -57,6 +57,10 @@ h1 {
 .billing-sections {
     max-height: 80vh;
 }
+.prod-det-title {
+    min-width: 5rem;
+}
+
 /* Media Query */
 @media only screen and (max-width: 600px) {
     .shop-now-btn {
