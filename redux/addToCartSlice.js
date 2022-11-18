@@ -4,14 +4,16 @@ export const addToCartSlice = createSlice({
     name:'addtocart',
     initialState:[],
     reducers:{
-        addToCart :(state) =>{
-            state.push({name:"Apurva"})
-            console.log(state)
+        addToCart :(state,product) =>{
+            state.push(product)
+        },
+        deleteProduct:(state,id) =>{
+            state.splice(state.findIndex(a => a.payload.id === id.payload),1);
         }
     },
 });
 
 // Action creators are generated for each case reducer function
-export const { addToCart } = addToCartSlice.actions
+export const { addToCart,deleteProduct } = addToCartSlice.actions
 
 export default addToCartSlice.reducer

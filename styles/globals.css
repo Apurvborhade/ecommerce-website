@@ -55,12 +55,17 @@ h1 {
     width: 100%;
 }
 .billing-sections {
-    max-height: 80vh;
+    height: 80vh;
 }
 .prod-det-title {
     min-width: 5rem;
 }
-
+.empty-cart p {
+    background: rgba(255, 255, 255, 0.385);
+}
+.billing-sections {
+    background: rgba(255, 255, 255, 0.385);
+}
 /* Media Query */
 @media only screen and (max-width: 600px) {
     .shop-now-btn {

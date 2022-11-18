@@ -87,7 +87,7 @@ const index = () => {
             {/* Products */}
             <div className='products mt-0 grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 p-10'>
                 {filteredProuducts.length ? filteredProuducts.map((product) => (
-                   <ProductCard key={product.id} isShopPage={true}/>     
+                   <ProductCard key={product.id} isShopPage={true} product={product}/>     
                 )) :(
                     <div className='flex justify-center w-100 py-40 text-3xl pr-24 '>No Product Found  ¯\_(ツ)_/¯</div>
                 )}

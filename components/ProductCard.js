@@ -5,14 +5,19 @@ import React, { useState } from 'react'
 import { BsHandbagFill } from 'react-icons/bs'
 import { AiFillDelete } from 'react-icons/ai'
 
-// Components
-import Button from './Button'
+// Redux
+import { addToCart,deleteProduct } from '../redux/addToCartSlice'
+import { useDispatch } from 'react-redux'
 
-const ProductCard = ({isShopPage,isCartPage}) => {
-    const [productImage, setProductImage] = useState("project_modules/fs/e6c8b0145522059.629fce1b811a7.jpg")
+const ProductCard = ({isShopPage,isCartPage,product}) => {
+    const { id,name,desc,price,image,altImage,section} = product;
+    const [productImage, setProductImage] = useState(product.image)
     const behanceLoader = ({ src, width, quality }) => {
         return `https://mir-s3-cdn-cf.behance.net//${src}`
     }
+
+    // Redux State Mng
+    const dispatch = useDispatch();
 
   return (
     <div className='product-card m-5' >
@@ -29,14 +34,14 @@ const ProductCard = ({isShopPage,isCartPage}) => {
                 alt="Summer"
                 width={1000}
                 height={500}
-                onMouseEnter={() => setProductImage("project_modules/1400/f96ba1145522059.629fce1b880eb.jpg")}
-                onMouseLeave={() => setProductImage("project_modules/fs/e6c8b0145522059.629fce1b811a7.jpg")}
+                onMouseEnter={() => setProductImage(image)}
+                onMouseLeave={() => setProductImage(altImage)}
             /> 
         </div>
         <div className='product-info pt-3'>
             <div className='flex justify-between w-pcent'>
-                <p className='text-xl'>Organic Colour Jaquard Knitted</p>
-                <p className='text-xl'>€ 419.00</p>
+                <p className='text-xl'>{name}</p>
+                <p className='text-xl'>€ {price}</p>
             </div>
             
             {isCartPage && (<div className='product-det grid lg:grid-cols-2 gap-x-14 gap-y-2 my-4 text-xs'>
@@ -61,14 +66,16 @@ const ProductCard = ({isShopPage,isCartPage}) => {
         </div>  
         <div className='product-info flex justify-end pt-3'>
             {!isCartPage ? (
-                <Button title={"Add To Cart"}/>
+                <button className='bg-btn text-white p-2 mt-2 px-4 outline-none' onClick={() => dispatch(addToCart(product))}>
+                    <p className='flex items-center'>Add To Cart <BsHandbagFill className='ml-2'/></p>
+                </button>
             ) : (
                 <div className='flex justify-between w-pcent'>
                     <select className='outline-none pr-10 pl-2 py-1 border'>
                         <option value="1">1</option>
                         <option value="2">2</option>
                     </select>
-                    <button className='dlt-btn outline-none'>
+                    <button className='dlt-btn outline-none' onClick={() => dispatch(deleteProduct(id))}>
                         <AiFillDelete size={20}/>
                     </button>
                 </div>
