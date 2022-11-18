@@ -61,7 +61,7 @@ const Header = ({isShopPage}) => {
 
   return (
     <>
-        <div className={`header flex justify-between px-10 py-5 ${border && 'border-b-2 border-white'} border-opacity-60 text-${headertext} z-10 bg-${headerColor}`}>
+        <div className={`header flex justify-between px-10  py-5 ${border && 'border-b-2 border-white'} border-opacity-60 text-${headertext} z-20 bg-${headerColor}`}>
             <Link className='logo' href="/">
                 <Image 
                     src={logo} 
@@ -73,8 +73,8 @@ const Header = ({isShopPage}) => {
             <div className={`links hidden lg:block cursor-pointer text-${headertext}`}>
                 <ul className='flex'>
                     {Menu.map((item) => (
-                        <Link href="/shop">
-                            <li className={`lg:mx-4 text-${headertext}`} key={Math.random()}>{item}</li>
+                        <Link href={`/collections/${item}`} key={Math.random()}>
+                            <li className={`lg:mx-4 text-${headertext}`} >{item}</li>
                         </Link>
                     ))}
                 </ul>
@@ -85,9 +85,11 @@ const Header = ({isShopPage}) => {
                     <li className='lg:mx-4 mx-2 text-xl lg:block hidden'>
                         <BsSearch />
                     </li>
-                    <li className='lg:mx-4 mx-2 text-xl lg:block hidden'>
-                        <BsHandbag />
-                    </li>
+                    <Link href={'/cart'}>
+                        <li className='lg:mx-4 mx-2 text-xl lg:block hidden'>
+                            <BsHandbag />
+                        </li>
+                    </Link>
                     <li className='lg:mx-4 mx-2 text-xl'>Login</li>
                     <li className='lg:mx-4  text-xl lg:hidden block cursor-pointer'>
                         <HiOutlineMenuAlt1 onClick={() => setIsClose(false)}/>

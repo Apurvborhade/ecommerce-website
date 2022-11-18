@@ -1,7 +1,11 @@
 import Image from 'next/image'
 import React, { useState } from 'react'
 
-const ProductCard = () => {
+// Icons
+import { BsHandbagFill } from 'react-icons/bs'
+import Button from './Button'
+
+const ProductCard = ({isShopPage}) => {
     const [productImage, setProductImage] = useState("project_modules/fs/e6c8b0145522059.629fce1b811a7.jpg")
     const behanceLoader = ({ src, width, quality }) => {
         return `https://mir-s3-cdn-cf.behance.net//${src}`
@@ -10,9 +14,11 @@ const ProductCard = () => {
   return (
     <div className='product-card m-5' >
         <div>
-            <div className='product-card-overlay absolute p-7'>
-                <p className='bg-headercol px-7 py-3'>New</p>
-            </div>
+            {isShopPage && (
+                <div className='product-card-overlay absolute p-7'>
+                    <p className='bg-headercol px-7 py-3'>New</p>
+                </div>
+            )}
             <Image
                 loading='lazy'
                 loader={behanceLoader}
@@ -27,6 +33,9 @@ const ProductCard = () => {
         <div className='product-info flex justify-between pt-3'>
             <p className='text-xl'>Organic Colour Jaquard Knitted</p>
             <p className='text-xl'>€ 419.00</p>
+        </div>  
+        <div className='product-info flex justify-between pt-3'>
+            <Button title={"Add To Cart"}/>
         </div>  
     </div>
   )

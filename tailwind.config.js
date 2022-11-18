@@ -12,6 +12,8 @@ module.exports = {
     },
     colors: {
       'headercol': '#f0eee9',
+      'btn':'#8d8679',
+      'black':'#000'
     },
   },
   plugins: [],

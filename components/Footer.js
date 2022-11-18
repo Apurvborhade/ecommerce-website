@@ -6,7 +6,7 @@ import React from 'react'
 import logo from '../public/header-logo-black.svg'
 // Icons
 import {RiSecurePaymentLine} from 'react-icons/ri'
-import {CiDeliveryTruck} from 'react-icons/ci'
+import { CiDeliveryTruck } from 'react-icons/ci'
 
 const Footer = () => {
   return (

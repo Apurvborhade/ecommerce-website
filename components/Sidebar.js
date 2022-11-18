@@ -10,6 +10,7 @@ import logo from '../public/header-logo-black.svg'
 import { Menu } from '../app/constants';
 
 import {IoIosCloseCircleOutline} from 'react-icons/io'
+import Link from 'next/link';
 
 const Sidebar = ({isClose,setIsClose}) => {
 
@@ -33,7 +34,9 @@ const Sidebar = ({isClose,setIsClose}) => {
         <div className='links block lg:hidden cursor-pointer mb-52'>
                 <ul className='flex flex-col justify-center'>
                     {Menu.map((item) => (
-                        <li className='lg:mx-4 text-center my-4 text-2xl'>{item}</li>
+                        <Link href={`/collections/${item}`} key={Math.random()}>
+                            <li className='lg:mx-4 text-center my-4 text-2xl'>{item}</li>
+                        </Link>
                     ))}
                 </ul>
         </div>
