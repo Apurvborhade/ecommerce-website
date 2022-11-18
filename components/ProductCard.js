@@ -38,7 +38,8 @@ const ProductCard = ({isShopPage,isCartPage}) => {
                 <p className='text-xl'>Organic Colour Jaquard Knitted</p>
                 <p className='text-xl'>€ 419.00</p>
             </div>
-            <div className='product-det grid lg:grid-cols-2 gap-x-14 gap-y-2 my-4 text-xs'>
+            
+            {isCartPage && (<div className='product-det grid lg:grid-cols-2 gap-x-14 gap-y-2 my-4 text-xs'>
                 <div className='flex'>
                     <p className='prod-det-title'>Art.no.</p>
                     <p className=''>11236783</p>
@@ -55,7 +56,8 @@ const ProductCard = ({isShopPage,isCartPage}) => {
                     <p className='prod-det-title'>Total:</p>
                     <p className=''>Rs 1000.00</p>
                 </div>
-            </div>
+            </div>)}
+
         </div>  
         <div className='product-info flex justify-end pt-3'>
             {!isCartPage ? (

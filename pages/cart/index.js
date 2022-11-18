@@ -3,6 +3,8 @@ import Button from '../../components/Button'
 
 import Header from '../../components/Header'
 import ProductCard from '../../components/ProductCard'
+
+
 const index = () => {
   return (
     <div>
