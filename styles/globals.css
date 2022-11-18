@@ -1,3 +1,65 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    overflow-x: hidden;
+    background: #f0eee9;
+}
+.w-100 {
+    width: 100vw;
+}
+input[type=checkbox] {
+    border-radius: 4px;
+    background: #ff0000;
+    width:100px;
+}
+h1 {
+   color:rgb(225 255 77);
+   overflow: hidden;     
+}
+.header {
+    transition: background 200ms ease;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+}
+
+.cta-btn {
+    border-bottom: 1px solid;
+    padding: .1rem 0px;
+    margin: 0px 70px;
+    
+}
+
+.shop-now-btn {
+    border: 1px solid white;
+    padding: 1rem 2rem;
+}
+
+.newsletter-form-input {
+    width: 20rem;
+    padding: 10px;
+}
+.form-btn {
+    background: #000;
+    color: white;
+    padding: 11px 40px;
+}
+
+.control-settings {
+    transition: all .3s ease;
+}
+
+.w-pcent {
+    width: 100%;
+}
+.billing-sections {
+    max-height: 80vh;
+}
+/* Media Query */
+@media only screen and (max-width: 600px) {
+    .shop-now-btn {
+        padding: 0.5rem 1rem;
+    }
+  }
