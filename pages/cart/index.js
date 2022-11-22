@@ -1,21 +1,31 @@
 import React from 'react'
-import Button from '../../components/Button'
 
 import Header from '../../components/Header'
 import ProductCard from '../../components/ProductCard'
-const index = () => {
+
+import { useSelector } from 'react-redux'
+
+const Index = () => {
+
+    const state = useSelector((state) => state.addtocart)
+
   return (
     <div>
         <Header isShopPage={true}/>
         <div className='mt-24 grid grid-cols-1 lg:grid-cols-3 lg:gap-20'>
-            <div className='grid grid-cols-1 lg:grid-cols-3 col-span-2'>
-                <ProductCard isShopPage={false}/>
-                <ProductCard isShopPage={false}/>
-                <ProductCard isShopPage={false}/>
-                <ProductCard isShopPage={false}/>
+            {state.cartProducts.length ? (
+                <div className='grid grid-cols-1 lg:grid-cols-3 col-span-2'>
+                    {state.cartProducts.map((product) => (
+                        <ProductCard isShopPage={false} isCartPage={true} product={product}/> 
+                    ))}
+                </div>
+            ) : (
+            <div className='flex justify-center w-pcent items-center empty-cart col-span-2'>
+                <p className='lg:text-3xl p-10'>Your Shoppings Bag is Empty ¯\_(ツ)_/¯</p>
             </div>
+            )}
 
-            <div className='billing-sections bg-btn lg:mr-10 mt-6 pt-10'>
+            <div className='billing-sections lg:mr-10 mt-6 pt-10'>
 
                 <div className='title flex justify-center'>
                     <h2 className='font-medium text-5xl'>Shoping Bag</h2>
@@ -61,4 +71,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Index
