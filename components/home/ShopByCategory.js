@@ -23,7 +23,7 @@ const ShopByCategory = () => {
                         <div className='flex justify-center relative'>
                             <div className={`${styles.featured_overlay} p-4 lg:p-10`}>
                                 <p className='lg:text-7xl text-4xl'>Sweaters</p>
-                                <button className='shop-now-btn my-6'>Shop Now</button>
+                                <button className='shop-now-btn my-6 hover:bg-black hover:text-white border hover:border-black'>Shop Now</button>
                             </div>
                             <Image
                                 loader={unsplashLoader}
@@ -36,7 +36,7 @@ const ShopByCategory = () => {
                         <div className='flex justify-center relative'>
                             <div className={`${styles.featured_overlay} p-4 lg:p-10`}>
                                 <p className='lg:text-7xl text-4xl'>V-Neck</p>
-                                <button className='shop-now-btn my-6'>Shop Now</button>
+                                <button className='shop-now-btn my-6 hover:bg-black hover:text-white border hover:border-black'>Shop Now</button>
                             </div>
                             <Image
                                 loader={unsplashLoader}
@@ -49,7 +49,7 @@ const ShopByCategory = () => {
                         <div className='flex justify-center relative'>
                             <div className={`${styles.featured_overlay} p-4 lg:p-10`}>
                                 <p className='lg:text-7xl text-4xl'>Blazers</p>
-                                <button className='shop-now-btn my-6'>Shop Now</button>
+                                <button className='shop-now-btn my-6 hover:bg-black hover:text-white border hover:border-black'>Shop Now</button>
                             </div>
                             <Image
                                 loader={unsplashLoader}
@@ -62,7 +62,7 @@ const ShopByCategory = () => {
                         <div className='flex justify-center relative'>
                             <div className={`${styles.featured_overlay} p-4 lg:p-10`}>
                                 <p className='lg:text-7xl text-4xl'>T-Shirts</p>
-                                <button className='shop-now-btn my-6'>Shop Now</button>
+                                <button className='shop-now-btn my-6 hover:bg-black hover:text-white border hover:border-black'>Shop Now</button>
                             </div>
                             <Image
                                 loader={unsplashLoader}
