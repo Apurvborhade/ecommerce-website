@@ -16,7 +16,7 @@ const Index = () => {
             {state.cartProducts.length ? (
                 <div className='grid grid-cols-1 lg:grid-cols-3 col-span-2'>
                     {state.cartProducts.map((product) => (
-                        <ProductCard isShopPage={false} isCartPage={true} product={product}/> 
+                        <ProductCard isShopPage={false} isCartPage={true} product={product} key={product.name}/> 
                     ))}
                 </div>
             ) : (
