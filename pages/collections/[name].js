@@ -16,7 +16,7 @@ import Image from 'next/image'
 import ProductCard from '../../components/ProductCard'
 import Footer from '../../components/Footer'
 
-const index = () => {
+const Index = () => {
     const [isShopPage, setIsShopPage] = useState(true);
     const [isFilterOn, setIsFilterOn] = useState(false);
     const [currentFilter, setCurrentFilter] = useState('');
@@ -103,4 +103,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Index

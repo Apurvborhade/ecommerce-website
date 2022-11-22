@@ -5,7 +5,7 @@ import ProductCard from '../../components/ProductCard'
 
 import { useSelector } from 'react-redux'
 
-const index = () => {
+const Index = () => {
 
     const state = useSelector((state) => state.addtocart)
 
@@ -71,4 +71,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Index
