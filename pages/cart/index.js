@@ -21,7 +21,7 @@ const Index = () => {
                 </div>
             ) : (
             <div className='flex justify-center w-pcent items-center empty-cart col-span-2'>
-                <p className='lg:text-3xl p-10'>Your Shopping Bag is Empty ¯\_(ツ)_/¯</p>
+                <p className='lg:text-3xl p-10'>Your Shoppings Bag is Empty ¯\_(ツ)_/¯</p>
             </div>
             )}
 
