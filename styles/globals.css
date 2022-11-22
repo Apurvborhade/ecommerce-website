@@ -34,8 +34,8 @@ h1 {
 }
 
 .shop-now-btn {
-    border: 1px solid white;
     padding: 1rem 2rem;
+    transition: all 0.2s ease;
 }
 
 .newsletter-form-input {

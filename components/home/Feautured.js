@@ -16,7 +16,7 @@ const Feautured = () => {
                     <div className={`${styles.featured_overlay} p-4 lg:p-10`}>
                         <p className='font-medium'>New Arrivals</p>
                         <p className='lg:text-7xl text-4xl'>Winter '22</p>
-                        <button className='shop-now-btn my-6'>Shop Now</button>
+                        <button className='shop-now-btn my-6 hover:bg-black hover:text-white border hover:border-black'>Shop Now</button>
                     </div>
                     <Image
                         loader={behanceLoader}
@@ -30,7 +30,7 @@ const Feautured = () => {
                     <div className={`${styles.featured_overlay} p-4 lg:p-10`}>
                         <p className='font-medium'>New Arrivals</p>
                         <p className='lg:text-7xl text-4xl'>Winter '22</p>
-                        <button className='shop-now-btn my-6'>Shop Now</button>
+                        <button className='shop-now-btn my-6 hover:bg-black hover:text-white border hover:border-black'>Shop Now</button>
                     </div>
                     <Image
                         loader={unsplashLoader}

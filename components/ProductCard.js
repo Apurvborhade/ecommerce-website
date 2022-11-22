@@ -40,7 +40,7 @@ const ProductCard = ({isShopPage,isCartPage,product}) => {
                 </div>
             )}
             <Image
-                loading='lazy'
+                loading='eager'
                 loader={behanceLoader}
                 src={productImage}
                 alt="Summer"
