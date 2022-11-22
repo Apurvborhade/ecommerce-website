@@ -11,9 +11,10 @@ body {
 }
 input[type=checkbox] {
     border-radius: 4px;
-    background: #ff0000;
     width:100px;
 }
+
+
 h1 {
    color:rgb(225 255 77);
    overflow: hidden;     

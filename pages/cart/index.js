@@ -7,16 +7,16 @@ import { useSelector } from 'react-redux'
 
 const index = () => {
 
-  const cartProducts = useSelector((state) => state.addtocart)
+    const state = useSelector((state) => state.addtocart)
 
   return (
     <div>
         <Header isShopPage={true}/>
         <div className='mt-24 grid grid-cols-1 lg:grid-cols-3 lg:gap-20'>
-            {cartProducts.length ? (
+            {state.cartProducts.length ? (
                 <div className='grid grid-cols-1 lg:grid-cols-3 col-span-2'>
-                    {cartProducts.map((product) => (
-                        <ProductCard isShopPage={false} isCartPage={true} product={product.payload}/> 
+                    {state.cartProducts.map((product) => (
+                        <ProductCard isShopPage={false} isCartPage={true} product={product}/> 
                     ))}
                 </div>
             ) : (

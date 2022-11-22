@@ -6,33 +6,9 @@
         "price":419.00,
         "image":"project_modules/1400/f96ba1145522059.629fce1b880eb.jpg",
         "altImage":"project_modules/fs/e6c8b0145522059.629fce1b811a7.jpg",
-        "section":"Men"
-    },
-    {
-        "id":2,
-        "name":"Organic Colour Jaquard Knitted 2 ",
-        "desc":"",
-        "price":419.00,
-        "image":"project_modules/1400/f96ba1145522059.629fce1b880eb.jpg",
-        "altImage":"project_modules/fs/e6c8b0145522059.629fce1b811a7.jpg",
-        "section":"Women"
-    },
-    {
-        "id":3,
-        "name":"Organic Colour Jaquard Knitted  3",
-        "desc":"",
-        "price":419.00,
-        "image":"project_modules/1400/f96ba1145522059.629fce1b880eb.jpg",
-        "altImage":"project_modules/fs/e6c8b0145522059.629fce1b811a7.jpg",
-        "section":"Women"
-    },
-    {
-        "id":4,
-        "name":"Organic Colour Jaquard Knitted 4",
-        "desc":"",
-        "price":419.00,
-        "image":"project_modules/1400/f96ba1145522059.629fce1b880eb.jpg",
-        "altImage":"project_modules/fs/e6c8b0145522059.629fce1b811a7.jpg",
-        "section":"Kids"
+        "section":"Women",
+        "sizes":["XS","S"],
+        "colors":["red","blue"]
     }
+    
 ] 

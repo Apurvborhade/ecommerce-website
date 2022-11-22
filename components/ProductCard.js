@@ -1,21 +1,33 @@
 import Image from 'next/image'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 // Icons
 import { BsHandbagFill } from 'react-icons/bs'
 import { AiFillDelete } from 'react-icons/ai'
 
 // Redux
-import { addToCart,deleteProduct } from '../redux/addToCartSlice'
-import { useDispatch } from 'react-redux'
+import { addToCart,deleteProduct } from '../redux/cartSlice'
+import { useDispatch,useSelector } from 'react-redux'
 
 const ProductCard = ({isShopPage,isCartPage,product}) => {
     const { id,name,desc,price,image,altImage,section} = product;
+
     const [productImage, setProductImage] = useState(product.image)
     const behanceLoader = ({ src, width, quality }) => {
         return `https://mir-s3-cdn-cf.behance.net//${src}`
     }
+    const [totalPrice, setTotalPrice] = useState(price)
+    const [productAmount, setProductAmount] = useState(1);
 
+    const handleAmountChange = (e) => {
+        setProductAmount(e.currentTarget.value)
+    }
+
+    useEffect(() => {
+        setTotalPrice((productAmount * price) + '.00')
+    }, [productAmount])
+    
+    
     // Redux State Mng
     const dispatch = useDispatch();
 
@@ -41,7 +53,7 @@ const ProductCard = ({isShopPage,isCartPage,product}) => {
         <div className='product-info pt-3'>
             <div className='flex justify-between w-pcent'>
                 <p className='text-xl'>{name}</p>
-                <p className='text-xl'>€ {price}</p>
+                <p className='text-xl'>Rs. {price}</p>
             </div>
             
             {isCartPage && (<div className='product-det grid lg:grid-cols-2 gap-x-14 gap-y-2 my-4 text-xs'>
@@ -59,7 +71,7 @@ const ProductCard = ({isShopPage,isCartPage,product}) => {
                 </div>
                 <div className='flex'>
                     <p className='prod-det-title'>Total:</p>
-                    <p className=''>Rs 1000.00</p>
+                    <p className=''>Rs {totalPrice}</p>
                 </div>
             </div>)}
 
@@ -71,7 +83,7 @@ const ProductCard = ({isShopPage,isCartPage,product}) => {
                 </button>
             ) : (
                 <div className='flex justify-between w-pcent'>
-                    <select className='outline-none pr-10 pl-2 py-1 border'>
+                    <select className='outline-none pr-10 pl-2 py-1 border' value={productAmount} onChange={(e) => handleAmountChange(e)}>
                         <option value="1">1</option>
                         <option value="2">2</option>
                     </select>
