@@ -11,7 +11,6 @@ import { CiDeliveryTruck } from 'react-icons/ci'
 const Footer = () => {
   return (
     <div className='Footer'>
-
       <div className='news-letter flex flex-col justify-center items-center border-y border-black border-opacity-80 p-10'>
         <div className='logo'>
             <Image 
@@ -25,7 +24,7 @@ const Footer = () => {
           <p className='text-center font-light italic my-6'>Sign up to our newsletter and be the first to know about exclusive offers, product<br/>launches and more.Your email</p>
         </div>
         <div className='form'>
-          <form className='flex'>
+          <form className='flex flex-col lg:flex-row '>
             <input placeholder='Your Email' className='outline-none border  newsletter-form-input'></input>
             <button className='form-btn'>Submit</button>
           </form>

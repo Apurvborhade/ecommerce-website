@@ -9,7 +9,7 @@ import ShopByCategory from './home/ShopByCategory'
 const Landing = () => {
     
   return (
-    <div className='landing'>
+    <div className='landing '>
 
         {/* Banner */}
             <Banner />
