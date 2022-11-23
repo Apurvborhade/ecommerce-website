@@ -7,12 +7,12 @@ const Banner = () => {
     <div>
         <div className='banner'>
                 <div className={styles.overlay} >
-                    <div className='landing-cta flex flex-col items-center'>
-                        <h1 className='lg:text-9xl text-7xl'>Pre-Black Sale</h1>
-                        <p className='text-6xl overflow-hidden my-16'>Up to 70%</p>
-                        <div className='cta-btns font-medium'>
-                            <button className='cta-btn'>Shop Women</button>
-                            <button className='cta-btn'>Shop Men</button>
+                    <div className='landing-cta flex flex-col items-center justify-center'>
+                        <h1 className='lg:text-9xl text-7xl text-center'>Pre-Black Sale</h1>
+                        <p className='text-6xl overflow-hidden my-16 text-center'>Up to 70%</p>
+                        <div className='cta-btns font-medium flex '>
+                            <button className='cta-btn '>Shop Women</button>
+                            <button className='cta-btn '>Shop Men</button>
                         </div>
                     </div>
                 </div>

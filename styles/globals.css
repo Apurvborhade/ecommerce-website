@@ -6,9 +6,10 @@ body {
     overflow-x: hidden;
     background: #f0eee9;
 }
-.w-100 {
-    width: 100vw;
-}
+
+/* .w-100 {
+    width: 100vw; */
+/* } */
 input[type=checkbox] {
     border-radius: 4px;
     width:100px;

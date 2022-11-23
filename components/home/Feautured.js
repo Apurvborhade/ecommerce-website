@@ -11,7 +11,7 @@ const Feautured = () => {
         return `https://images.unsplash.com/${src}`
       }
   return (
-    <div className='feature grid grid-cols-2 gap-2 place-content-center p-3'>
+    <div className='feature grid grid-col-1 lg:grid-cols-2 gap-2 place-content-center p-3'>
                 <div className='winter-featured flex justify-center relative'>
                     <div className={`${styles.featured_overlay} p-4 lg:p-10`}>
                         <p className='font-medium'>New Arrivals</p>
