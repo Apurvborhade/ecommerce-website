@@ -1,15 +1,21 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import Header from '../../components/Header'
 import ProductCard from '../../components/ProductCard'
 
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { calcPrice } from '../../redux/cartSlice'
 
 const Index = () => {
 
     const state = useSelector((state) => state.addtocart)
-
-  return (
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(calcPrice())
+    },[])
+    
+    console.log(state.orderAmount)
+    return (
     <div>
         <Header isShopPage={true}/>
         <div className='mt-24 grid grid-cols-1 lg:grid-cols-3 lg:gap-20'>
@@ -35,7 +41,7 @@ const Index = () => {
                     <div className=''>
                         <div className='flex justify-between'>
                             <p className=''>Order Value</p>
-                            <p className=''>Rs 1,999.00</p>
+                            <p className=''>Rs {state.orderAmount}</p>
                         </div>
                         <div className='flex justify-between'>
                             <p className=''>Delivery</p>

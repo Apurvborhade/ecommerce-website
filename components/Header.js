@@ -81,17 +81,17 @@ const Header = ({isShopPage}) => {
             </div>
 
             <div className='header-cta'>
-                <ul className='flex items-center'>
+                <ul className='flex items-center justify-center'>
                     <li className='lg:mx-4 mx-2 text-xl lg:block hidden'>
                         <BsSearch />
                     </li>
                     <Link href={'/cart'}>
-                        <li className='lg:mx-4 mx-2 text-xl lg:block hidden'>
+                        <li className='lg:mx-4 mx-2 text-xl lg:block '>
                             <BsHandbag />
                         </li>
                     </Link>
                     <li className='lg:mx-4 mx-2 text-xl'>Login</li>
-                    <li className='lg:mx-4  text-xl lg:hidden block cursor-pointer'>
+                    <li className='lg:mx-4 ml-3 text-xl lg:hidden block cursor-pointer'>
                         <HiOutlineMenuAlt1 onClick={() => setIsClose(false)}/>
                     </li>
                 </ul>

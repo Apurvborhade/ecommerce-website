@@ -11,6 +11,7 @@ import { Menu } from '../app/constants';
 
 import {IoIosCloseCircleOutline} from 'react-icons/io'
 import Link from 'next/link';
+import { BsHandbag } from 'react-icons/bs';
 
 const Sidebar = ({isClose,setIsClose}) => {
 
