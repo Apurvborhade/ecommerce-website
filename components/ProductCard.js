@@ -6,30 +6,54 @@ import { BsHandbagFill } from 'react-icons/bs'
 import { AiFillDelete } from 'react-icons/ai'
 
 // Redux
-import { addToCart,deleteProduct } from '../redux/cartSlice'
+import { addToCart,calcPrice,deleteProduct,setAmount } from '../redux/cartSlice'
 import { useDispatch,useSelector } from 'react-redux'
 
 const ProductCard = ({isShopPage,isCartPage,product}) => {
-    const { id,name,desc,price,image,altImage,section} = product;
-
-    const [productImage, setProductImage] = useState(product.image)
     const behanceLoader = ({ src, width, quality }) => {
         return `https://mir-s3-cdn-cf.behance.net//${src}`
     }
+
+    const { id,name,desc,price,image,altImage,section} = product;
+
+    const state = useSelector((state) => state.addtocart);
+
+    // Variables
+    const [productImage, setProductImage] = useState(product.image)
     const [totalPrice, setTotalPrice] = useState(price)
     const [productAmount, setProductAmount] = useState(1);
-
+    const [btnVisible,setBtnVisible] = useState(true)
+    
+    
+    
+    // Redux State Mng
+    const dispatch = useDispatch();
+    
+    const item = Object.assign({},product,{amount:productAmount});
+    
     const handleAmountChange = (e) => {
         setProductAmount(e.currentTarget.value)
     }
 
     useEffect(() => {
-        setTotalPrice((productAmount * price) + '.00')
+        dispatch(setAmount({id,productAmount}))
+
+        setTotalPrice((productAmount * price))
+
+        dispatch(calcPrice())
     }, [productAmount])
     
+
     
-    // Redux State Mng
-    const dispatch = useDispatch();
+    // Checks Product Already in Cart Then diplay Btn
+    useEffect(() => {
+        state.cartProducts.forEach((p) => {
+            if(p.id === item.id) {
+                setBtnVisible(false)       
+            }
+        }) 
+    }, [state.cartProducts])
+
 
   return (
     <div className='product-card m-5' >
@@ -78,8 +102,16 @@ const ProductCard = ({isShopPage,isCartPage,product}) => {
         </div>  
         <div className='product-info flex justify-end pt-3'>
             {!isCartPage ? (
-                <button className='bg-btn text-white p-2 mt-2 px-4 outline-none' onClick={() => dispatch(addToCart(product))}>
-                    <p className='flex items-center'>Add To Cart <BsHandbagFill className='ml-2'/></p>
+                <button className='bg-btn text-white p-2 mt-2 px-4 outline-none' onClick={() => {
+                        if(btnVisible) {
+                            dispatch(addToCart(item))
+                        }
+                    }}>
+                        {btnVisible ? (
+                            <p className='flex items-center'>Add To Cart <BsHandbagFill className='ml-2'/></p>
+                            ) : (
+                            <p className='flex items-center'>Added To Cart</p>
+                        )}
                 </button>
             ) : (
                 <div className='flex justify-between w-pcent'>

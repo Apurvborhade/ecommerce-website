@@ -16,12 +16,17 @@ import Image from 'next/image'
 import ProductCard from '../../components/ProductCard'
 import Footer from '../../components/Footer'
 
+
 const Index = () => {
     const [isShopPage, setIsShopPage] = useState(true);
     const [isFilterOn, setIsFilterOn] = useState(false);
     const [currentFilter, setCurrentFilter] = useState('');
     const [options, setOptions] = useState([]);
     const filter = useRef('') 
+
+
+
+    
 
     // Get Routes
     const router = useRouter()
@@ -39,7 +44,6 @@ const Index = () => {
             collectionSection == undefined  
         ){} else {
             router.push("/");
-            console.log(collectionSection)
         }
     },[collectionSection])
         
@@ -53,8 +57,6 @@ const Index = () => {
 
     useEffect(() => {
         setOptions(filterOptions.filter((item) => item.title === currentFilter.title))
-        console.log(options)        
-        // options.length && options[0].options.map((item=> console.log(item)))
     }, [currentFilter])
     
 
