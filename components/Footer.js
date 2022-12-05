@@ -38,7 +38,7 @@ const Footer = () => {
           <p className='text-xl'>Free Shipping & Returns</p>
           <p>taxes and duties included</p>
         </div>
-        <div className='service flex justify-center flex-col sm:border-y lg:border-x border-black items-center py-4'>
+        <div className='service flex justify-center flex-col border-y lg:border-y-0 lg:border-x border-black items-center py-4'>
           <p className='text-xl'>Free Shipping</p>
           <p>taxes and duties included</p>
         </div>

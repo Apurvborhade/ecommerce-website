@@ -4,17 +4,35 @@ import Header from '../../components/Header'
 import ProductCard from '../../components/ProductCard'
 
 import { useDispatch, useSelector } from 'react-redux'
-import { calcPrice } from '../../redux/cartSlice'
+import { getCartItems } from '../../redux/cartSlice'
 
 const Index = () => {
 
-    const state = useSelector((state) => state.addtocart)
+    const state = useSelector((state) => state.cart)
     const dispatch = useDispatch();
+    const [orderPrice, setOrderPrice] = useState(0)
     useEffect(() => {
-        dispatch(calcPrice())
-    },[])
+        dispatch(getCartItems(1))
+        
+    },[state.orderPrice])
     
-    console.log(state.orderAmount)
+    const calcPrice = () => {
+        
+        const calculatedPrice = state.cartProducts.reduce((init,curElem) => {
+            if (curElem.info) {
+                const { totalPrice } = curElem.info
+                init += totalPrice;
+            }  
+            return init;
+        },0)
+        
+        setOrderPrice(calculatedPrice)
+    }
+    useEffect(() => {
+        calcPrice()
+    }, [state.cartProducts])
+    
+
     return (
     <div>
         <Header isShopPage={true}/>
@@ -41,17 +59,17 @@ const Index = () => {
                     <div className=''>
                         <div className='flex justify-between'>
                             <p className=''>Order Value</p>
-                            <p className=''>Rs {state.orderAmount}</p>
+                            <p className=''>Rs {orderPrice}</p>
                         </div>
                         <div className='flex justify-between'>
                             <p className=''>Delivery</p>
-                            <p className=''>Rs 199.00</p>
+                            <p className=''>Rs 00.00</p>
                         </div>
                     </div>
                     <div className='total border-t mt-5'>
                         <div className='flex justify-between mt-3'>
                             <p className='font-medium'>Total</p>
-                            <p className='font-medium'>Rs 2999.00</p>
+                            <p className='font-medium'>Rs {orderPrice}</p>
                         </div>
                     </div>
                 </div>

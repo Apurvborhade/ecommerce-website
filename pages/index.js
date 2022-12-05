@@ -20,7 +20,6 @@ export default function Home() {
       <Header />
       <Landing />
       <Footer />
-      
     </div>
   )
 }

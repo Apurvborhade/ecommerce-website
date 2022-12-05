@@ -5,7 +5,7 @@ import styles from "../../styles/Home.module.css"
 
 
 const ShopByCategory = () => {
-    const behanceLoader = ({ src, width, quality }) => {
+    const imageLoader = ({ src, width, quality }) => {
         return `https://mir-s3-cdn-cf.behance.net//${src}`
       }
     const unsplashLoader = ({ src, width, quality }) => {

@@ -4,7 +4,7 @@ import React from 'react'
 import styles from "../../styles/Home.module.css"
 
 const Feautured = () => {
-    const behanceLoader = ({ src, width, quality }) => {
+    const imageLoader = ({ src, width, quality }) => {
         return `https://mir-s3-cdn-cf.behance.net//${src}`
       }
     const unsplashLoader = ({ src, width, quality }) => {
@@ -19,7 +19,7 @@ const Feautured = () => {
                         <button className='shop-now-btn my-6 hover:bg-black hover:text-white border hover:border-black'>Shop Now</button>
                     </div>
                     <Image
-                        loader={behanceLoader}
+                        loader={imageLoader}
                         src="project_modules/fs/e7b848139247005.622c08e2bbbb8.jpg"
                         alt="Summer"
                         width={1000}

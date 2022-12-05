@@ -13,7 +13,9 @@ module.exports = {
     colors: {
       'headercol': '#f0eee9',
       'btn':'#8d8679',
-      'black':'#000'
+      'black':'#000',
+      'error':'#FF0000',
+      'succes':'#93D46A',
     },
   },
   plugins: [],

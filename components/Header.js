@@ -18,10 +18,25 @@ import { HiOutlineMenuAlt1 } from 'react-icons/hi';
 
 // Constants
 import { Menu } from '../app/constants';
+import { useDispatch, useSelector } from 'react-redux';
+import { logout } from '../redux/authSlice';
+import { useRouter } from 'next/router';
 
 const Header = ({isShopPage}) => {
-
+    
    const [isClose, setIsClose] = useState(true)
+   const [userAvail, setUserAvail] = useState(false)
+   const { user } = useSelector((state) => state.auth)
+   const dispatch = useDispatch()
+   const router = useRouter()
+
+   useEffect(() => {
+    if(user) {
+        setUserAvail(true)
+    } else {
+        setUserAvail(false)
+    }
+   }, [user])
    
    //Scroll Events Setup
    const [headerColor, setHeaderColor] = useState(!isShopPage ? "transparent":"headercol")
@@ -90,7 +105,17 @@ const Header = ({isShopPage}) => {
                             <BsHandbag />
                         </li>
                     </Link>
-                    <li className='lg:mx-4 mx-2 text-xl'>Login</li>
+                    {userAvail ? (
+                        
+                            <li className='lg:mx-4 mx-2 text-xl cursor-pointer' onClick={() => {
+                                dispatch(logout())
+                                router.reload(window.location.pathname)
+                            }}>Logout</li>
+                    ) : (
+                        <Link href={'/auth'}>
+                            <li className='lg:mx-4 mx-2 text-xl'>Login</li>
+                        </Link>
+                    )}
                     <li className='lg:mx-4 ml-3 text-xl lg:hidden block cursor-pointer'>
                         <HiOutlineMenuAlt1 onClick={() => setIsClose(false)}/>
                     </li>
