@@ -70,7 +70,7 @@ const Index = () => {
                 <p className=' text-2xl font-light my-5'>The {collectionSection}swear styles are purposefully designed to create wardrobe <br/> essentials that will last a lifetime.</p>
             </div>
 
-            <div className='controls mt-20 flex justify-between items-center sticky z-10'>
+            <div className='controls mt-20 flex justify-between items-center overflow-scroll sticky z-10'>
                 <div className='filter flex'>
                     {filters.map((item) => (
                         <button onClick={() => filterHandle(item)} key={item.title} className='mx-10 text-2xl flex items-center justify-center outline-none'>{item.title} <IoIosArrowDown  className='mx-3'/></button>
